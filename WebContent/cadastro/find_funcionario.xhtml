@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:sec="http://www.springframework.org/security/facelets/tags"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/templatePrincipal.xhtml">
+	<ui:define name="corpo">
+		<p:commandButton value="Novo" id="buttonNovoRegistro"
+			style="height:40px; width:100px;" ajax="false" immediate="false"
+			action="#{funcionarioBeanView.novo}" />
+
+		<util:pesquisa managedBeanView="#{funcionarioBeanView}"
+			nomePesquisa="Pesquisa de Funcionário"
+			colunasGridDataTableList="/resources/components/colunasDataTableFuncionario.xhtml"
+			exibirBotaoAdd="false">
+
+		</util:pesquisa>
+	</ui:define>
+</ui:composition>
+
+</html>
